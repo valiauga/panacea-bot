@@ -7,7 +7,7 @@ There is something to celebrate each day!
 
 **Usage** 
 Pretty basic stuff... 
-- Build using Node/npm ('npm init') 
+- Built using Node/npm ('npm install' to source used packages...) 
 - [Get yourself a slack webhook](https://api.slack.com/messaging/webhooks)
 - [Get youreslf calendar API creds from 'webcal'](http://www.webcal.fi/en-US/other_file_formats.php)
 - Update 'CREDS' module file with your webhook url / Calendar api creds
