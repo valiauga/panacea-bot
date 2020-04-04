@@ -1,16 +1,20 @@
-var rp = require('request-promise');
+const rp = require('request-promise');
 const jsonfile = require('jsonfile');
+const creds = require('./creds');
+
+let webhook,api_uri;
+for (n in creds){
+    webhook = creds[n].webhook;
+    api_uri = creds[n].api;
+}
+
 
 // https://www.npmjs.com/package/@slack/webhook
 const { IncomingWebhook } = require('@slack/webhook');
-// https://api.slack.com/apps/A0116PWB3MW/incoming-webhooks?success=1
 
-// we-can-projects webhook...
-const slack_url = 'https://hooks.slack.com/services/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'
-const calendar_url = 'http://www.webcal.fi/cal.php?id=50&format=json&start_year=current_year&end_year=current_year&tz=UTC'
+const slack_url = webhook;
+const calendar_url = api_uri;
 const webhook = new IncomingWebhook(slack_url);
-
-// const file = 'dummy_data.json';
 
 let dateName, dateUrl;
 let calendarData = {
@@ -54,16 +58,14 @@ rp(options)
 
         for(var attributename in repos){
           if (repos[attributename].date == f_date){
-            // console.log("Happy " + obj[attributename].name + "!");
+            
             calendarData.name = repos[attributename].name;
             calendarData.url = repos[attributename].url;
           }
 
       }
-      console.log(calendarData);
-      //HACKED IN TO PARSE LOOP...
+//      console.log(calendarData);
       webhook.send({
-          // text: '*' + String(calendarData.name) + '*\n' //'I\'ve got news for you...',
       	   "blocks": [{
       			"type": "divider"
       		},
@@ -130,16 +132,3 @@ rp(options)
 // })
 
 //--------------PROCESS DATA: CHECK WEBCAL DATA AGAINST TODAY'S DATE... PICK THE DAY... FORM JSON MESSAGE...
-
-
-
-//--------------SEND MESSAGE TO SLACK
-
-// (async () => {
-//   await webhook.send({
-//     text: 'I\'ve got news for you...',
-//   });
-// })();
-
-
-//--------------SEND TO SLACK
