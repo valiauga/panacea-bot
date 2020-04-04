@@ -8,7 +8,7 @@ There is something to celebrate each day!
 **Usage** 
 Pretty basic stuff... 
 - Build using Node/npm ('npm init') 
-- Get yourself a slack webhook (link)
+- Get yourself a slack webhook (link) [GitHub](http://github.com)
 - Get youreslf API creds for for calendar calls (link)
 - Update 'CREDS' module file with your webhook url / Calendar api creds
 - Deploy to Heroku & use **Heroku Scheduler add-on** to set time for the message to go out each day!
