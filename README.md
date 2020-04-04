@@ -1,4 +1,4 @@
-# panacea-bot
+# Panacea Bot
 Slack bot to help teams celebrate each day!
 
 **Panacea Bot** app looks up for what celebration is happening in the world that day.
