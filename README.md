@@ -1,4 +1,4 @@
 # panacea-bot
 Slack bot to help celebrate each day!
 
-<img src"=/images/0-hello.png"></img>
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
